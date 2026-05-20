@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-canvas font-sans text-white antialiased">
-        <div className="relative min-h-screen">
+        <div className="relative z-10 min-h-screen">
           <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
           <Header />
           <main>{children}</main>

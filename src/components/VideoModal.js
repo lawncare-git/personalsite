@@ -27,6 +27,7 @@ export default function VideoModal({ videos }) {
       <div className="flex flex-wrap justify-center gap-4">
         {videos.map((video) => {
           const isRed = video.accent === "red";
+          const isIce = video.accent === "ice";
           return (
             <button
               key={video.title}
@@ -35,7 +36,9 @@ export default function VideoModal({ videos }) {
               className={[
                 "group flex items-center gap-3 rounded-full border px-3 py-3 pr-5 text-left transition",
                 isRed
-                  ? "border-red-500/40 bg-red-600 text-white hover:bg-red-500"
+                  ? "border-red-400/45 bg-white/5 text-white hover:border-red-300/55 hover:bg-white/8"
+                  : isIce
+                    ? "border-cyan-200/45 bg-white/5 text-white hover:border-cyan-100/55 hover:bg-white/8"
                   : "border-white/15 bg-white/5 text-white hover:border-white/35 hover:bg-white/8",
               ].join(" ")}
             >
@@ -47,9 +50,14 @@ export default function VideoModal({ videos }) {
                   className="object-cover transition duration-300 group-hover:scale-105"
                 />
               </div>
-              <span className="text-xs font-semibold uppercase tracking-[0.28em]">
-                {video.title}
-              </span>
+              <div className="flex min-w-0 flex-col justify-center">
+                <span className="text-xs font-semibold uppercase tracking-[0.28em]">
+                  {video.title}
+                </span>
+                <span className="mt-1 text-[10px] leading-none text-white/58">
+                  {video.program}
+                </span>
+              </div>
             </button>
           );
         })}

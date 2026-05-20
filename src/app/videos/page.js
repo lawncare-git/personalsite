@@ -41,14 +41,6 @@ const videos = [
     notes: "UE5.6, Metasounds, Ableton Live10, Various Hardware/Software Synths",
     accent: "default",
   },
-  {
-    title: "Santa",
-    program: "Runway",
-    videoSrc: "/videos/Santa.mp4",
-    thumbnailSrc: "/images/santaThmb.png",
-    notes: "Runway, DaVinci Resolve20. Made for my niece and nephew with a friend of mine.",
-    accent: "default",
-  },
 ];
 
 export default function VideosPage() {
